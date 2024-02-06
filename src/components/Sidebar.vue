@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar bg-white p-4 border-r border-gray-200 h-full min-w-1/6">
+    <div class="sidebar fixed bg-white p-4 border-r border-gray-200 h-full min-w-1/6">
         <div
             v-for="tab in tabs"
             :key="tab.id"
@@ -74,6 +74,10 @@ const isOpenedTab = (id: number) => {
 </script>
 
 <style lang="scss" scoped>
+.sidebar {
+    width: 250px;
+}
+
 @media (max-width: 899px) {
     .sidebar {
         display: none;
