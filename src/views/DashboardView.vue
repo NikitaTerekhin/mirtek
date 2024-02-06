@@ -30,7 +30,7 @@
                 description="This is a list of latest transactions."
                 class="pb-4"
             >
-                <div class="flex align-center justify-between py-2 rounded-r rounded-xl bg-gray-100 text-gray-500 text-sm font-medium">
+                <div class="flex align-center justify-between py-2 border-b border-gray-200 rounded-b-none rounded-xl bg-gray-100 text-gray-500 text-sm font-medium">
                     <div
                         v-for="cell in tableCells"
                         :key="cell.id"
