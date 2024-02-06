@@ -2,7 +2,7 @@
     <div class="flex justify-between align-center border-b border-gray-200 last:border-b-0 py-2">
         <div class="flex justify-center align-center">
             <div>
-                <img src="../assets/icons/avatar.svg" alt="#">
+                <img :src="`src/assets/icons/customers/${item.id}.svg`" alt="#">
             </div>
 
             <div class="px-2">
