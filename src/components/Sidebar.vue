@@ -1,36 +1,28 @@
 <template>
-    <div class="bg-white p-4 border-r border-gray-300 h-full">
-        <!-- Вкладки сайдбара -->
-        <div v-for="(tab, index) in tabs" :key="index">
-            <!-- Заголовок вкладки -->
+    <div class="bg-white p-4 border-r border-gray-300 h-full w-1/6">
+        <div v-for="tab in tabs" :key="tab.id" class="mb-4">
             <div
-                class="flex items-center justify-between p-4 cursor-pointer text-gray-800"
-                :class="{ 'bg-blue-600 text-white': isActiveTab(tab.id) }"
+                class="flex items-center justify-between py-1 px-2 rounded-lg cursor-pointer text-gray-800 font-semibold hover:bg-gray-100"
+                :class="{ 'text-green-500': isActiveTab(tab.id) }"
                 @click="toggleTab(tab.id)"
             >
-        <span class="flex items-center">
-          <svg
-              v-if="!isActiveTab(tab.id)"
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 mr-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-          >
-            <!-- Иконка вкладки -->
-              <!-- Подставьте нужный SVG-код для каждой вкладки -->
-          </svg>
-          <span v-else class="mr-2">❯</span> <!-- Символ "больше" для открытой вкладки -->
-          {{ tab.title }}
-        </span>
+                <div class="flex items-center">
+                    {{ tab.title }}
+                </div>
+
+                <template v-if="tab.children.length">
+                    <img
+                        src="../assets/icons/arrow.svg"
+                        alt="#"
+                        :class="{'rotate-180': isOpenedTab(tab.id)}"
+                    >
+                </template>
             </div>
-            <!-- Подвкладки -->
-            <div v-if="isActiveTab(tab.id)" class="pl-8">
-                <div v-for="(subtab, subindex) in tab.subtabs" :key="subindex" class="p-2">
-                    <!-- Заголовок подвкладки -->
-                    <div class="flex items-center cursor-pointer text-gray-800">
-                        <!-- Здесь можете добавить иконку для подвкладки, если необходимо -->
-                        <span>{{ subtab.title }}</span>
+
+            <div v-if="isOpenedTab(tab.id)" class="pl-8">
+                <div v-for="(child, index) in tab.children" :key="index" class="p-2">
+                    <div class="flex items-center cursor-pointer text-gray-800 font-semibold">
+                        <span>{{ child.title }}</span>
                     </div>
                 </div>
             </div>
@@ -42,22 +34,33 @@
 import {ref, reactive} from 'vue';
 
 const tabs = reactive([
-    {id: 1, title: 'Tab 1', subtabs: [{title: 'Subtab 1'}, {title: 'Subtab 2'}]},
-    {id: 2, title: 'Tab 2', subtabs: null},
-    {id: 3, title: 'Tab 3', subtabs: [{title: 'Subtab 1'}]},
+    {id: 1, title: 'Overview', children: []},
+    {id: 2, title: 'Pages', children: [{title: 'Child 1'}]},
+    {id: 3, title: 'Sales', children: [{title: 'Product List'}, {title: 'Billing'}, {title: 'Invoice'}]},
+    {id: 4, title: 'Messages', children: []},
+    {id: 5, title: 'Authentication', children: [{title: 'Child 1'}]},
+    {id: 6, title: 'Messages', children: []},
+    {id: 7, title: 'Messages', children: []},
+    {id: 8, title: 'Messages', children: []}
 ]);
 
-let activeTabId = ref(null) as number | null;
+let activeTabId = ref(1);
 
 const isActiveTab = (id: number) => {
-    return activeTabId === id;
+    return activeTabId.value === id;
 };
 
+let openedTabs = ref([]);
+
 const toggleTab = (id: number) => {
-    if (activeTabId === id) {
-        activeTabId = null;
+    if (openedTabs.value.includes(id)) {
+        openedTabs.value = openedTabs.value.filter((e: number) => e !== id);
     } else {
-        activeTabId = id;
+        openedTabs.value.push(id);
     }
+};
+
+const isOpenedTab = (id: number) => {
+    return openedTabs.value.includes(id);
 };
 </script>
