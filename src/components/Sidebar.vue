@@ -1,12 +1,19 @@
 <template>
-    <div class="bg-white p-4 border-r border-gray-300 h-full w-1/6">
-        <div v-for="tab in tabs" :key="tab.id" class="mb-4">
+    <div class="bg-white p-4 border-r border-gray-300 h-full min-w-1/6">
+        <div
+            v-for="tab in tabs"
+            :key="tab.id"
+            class="mb-4"
+            :class="{'border-t pt-4': tab.id === 6}"
+        >
             <div
                 class="flex items-center justify-between py-1 px-2 rounded-lg cursor-pointer text-gray-800 font-semibold hover:bg-gray-100"
                 :class="{ 'text-green-500': isActiveTab(tab.id) }"
                 @click="toggleTab(tab.id)"
             >
                 <div class="flex items-center">
+                    <img :src="(`src/assets/icons/${tab.title.toLowerCase()}.svg`)" alt="#" class="w-6 h-6 mr-2">
+
                     {{ tab.title }}
                 </div>
 
@@ -15,6 +22,7 @@
                         src="../assets/icons/arrow.svg"
                         alt="#"
                         :class="{'rotate-180': isOpenedTab(tab.id)}"
+                        class="ml-4"
                     >
                 </template>
             </div>
@@ -39,9 +47,9 @@ const tabs = reactive([
     {id: 3, title: 'Sales', children: [{title: 'Product List'}, {title: 'Billing'}, {title: 'Invoice'}]},
     {id: 4, title: 'Messages', children: []},
     {id: 5, title: 'Authentication', children: [{title: 'Child 1'}]},
-    {id: 6, title: 'Messages', children: []},
-    {id: 7, title: 'Messages', children: []},
-    {id: 8, title: 'Messages', children: []}
+    {id: 6, title: 'Docs', children: []},
+    {id: 7, title: 'Components', children: []},
+    {id: 8, title: 'Help', children: []}
 ]);
 
 let activeTabId = ref(1);
