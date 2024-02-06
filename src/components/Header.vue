@@ -72,7 +72,7 @@ const login = () => {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 899px) {
     .header {
         &__item {
             display: none;

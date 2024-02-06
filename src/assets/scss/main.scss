@@ -24,3 +24,13 @@ body {
     height: 100vh;
     width: 100%;
 }
+
+@media (max-width: 1299px) {
+    .mobile {
+        display: none;
+    }
+
+    .table-item {
+        width: 50%;
+    }
+}

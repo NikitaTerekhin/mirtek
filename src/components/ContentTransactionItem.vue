@@ -1,6 +1,6 @@
 <template>
     <div class="flex align-center justify-between py-2 rounded-xl">
-        <div class="flex w-1/4 py-1 px-4">
+        <div class="table-item flex w-1/4 py-1 px-4">
             <div class="mr-1">
                 Payment from
             </div>
@@ -10,15 +10,15 @@
             </div>
         </div>
 
-        <div class="text-left text-gray-500 text-sm w-1/4 py-1 px-4">
+        <div class="table-item text-left text-gray-500 text-sm w-1/4 py-1 px-4">
             {{ item.date }}
         </div>
 
-        <div class="font-semibold w-1/4 py-1 px-4">
+        <div class="mobile font-semibold w-1/4 py-1 px-4">
             {{ item.amount }}
         </div>
 
-        <div class="w-1/4 flex items-center justify-center">
+        <div class="mobile w-1/4 flex items-center justify-center">
             <AppBadge
                 :title="item.status"
                 :color="getColor(item.status)"

@@ -1,10 +1,10 @@
 <template>
     <DefaultLayout>
         <div class="p-4">
-            <div class="flex pb-4 w-full">
+            <div class="wrap flex pb-4 w-full">
                 <ContentWrapper
                     title="Latest Customers"
-                    class="w-1/3 mr-4"
+                    class="content-wrapper w-1/3 mr-4"
                 >
                     <ContentCustomerItem
                         v-for="customer in store.getters.customers"
@@ -15,7 +15,7 @@
 
                 <ContentWrapper
                     title="Top products"
-                    class="w-2/3"
+                    class="content-wrapper w-2/3"
                 >
                     <ContentProductItem
                         v-for="product in store.getters.products"
@@ -34,8 +34,8 @@
                     <div
                         v-for="cell in tableCells"
                         :key="cell.id"
-                        class="w-1/4 py-1 px-4"
-                        :class="{ 'text-left': cell.id === 't' | cell.id === 'd' }"
+                        class="table-item w-1/4 py-1 px-4"
+                        :class="{ 'text-left': cell.id === 't' | cell.id === 'd', 'mobile': cell.id === 'a' | cell.id === 's' }"
                     >
                         {{ cell.name.toUpperCase() }}
                     </div>
@@ -70,3 +70,20 @@ const tableCells = ref([
     {id: 's', name: 'status'},
 ]);
 </script>
+
+<style lang="scss" scoped>
+@media (max-width: 1399px) {
+    .wrap {
+        flex-direction: column;
+    }
+
+    .content-wrapper {
+        width: 100%;
+
+        &:first-child {
+            margin-bottom: 1rem;
+            margin-right: 0;
+        }
+    }
+}
+</style>
