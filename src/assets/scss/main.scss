@@ -32,5 +32,19 @@ body {
 
     .table-item {
         width: 50%;
+
+
+        &--text-end {
+            text-align: end;
+        }
+    }
+}
+
+@media (max-width: 599px) {
+    .table-item {
+        font-size: 13px;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        white-space: nowrap;
     }
 }

@@ -28,14 +28,17 @@
             <ContentWrapper
                 title="Transactions"
                 description="This is a list of latest transactions."
-                class="pb-4"
             >
                 <div class="flex align-center justify-between py-2 border-b border-gray-200 rounded-b-none rounded-xl bg-gray-100 text-gray-500 text-sm font-medium">
                     <div
                         v-for="cell in tableCells"
                         :key="cell.id"
                         class="table-item w-1/4 py-1 px-4"
-                        :class="{ 'text-left': cell.id === 't' | cell.id === 'd', 'mobile': cell.id === 'a' | cell.id === 's' }"
+                        :class="{
+                            'text-left': cell.id === 't' | cell.id === 'd',
+                            'mobile': cell.id === 'a' | cell.id === 's',
+                            'table-item--text-end': cell.id === 'd'
+                        }"
                     >
                         {{ cell.name.toUpperCase() }}
                     </div>

@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div class="table-item text-left text-gray-500 text-sm w-1/4 py-1 px-4">
+        <div class="table-item table-item--text-end text-left text-gray-500 text-sm w-1/4 py-1 px-4">
             {{ item.date }}
         </div>
 
