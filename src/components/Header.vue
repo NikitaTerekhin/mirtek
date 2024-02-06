@@ -9,7 +9,7 @@
                         v-for="link in links"
                         :key="link.id"
                         :to="link.url"
-                        class="text-gray-600 hover:text-gray-800"
+                        class="text-gray-600 hover:text-gray-800 header__item"
                         :class="{ 'text-blue-500': $route.name === link.name.toLowerCase() }"
                     >
                         {{ link.name }}
