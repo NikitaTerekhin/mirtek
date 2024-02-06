@@ -11,3 +11,10 @@ export type ProductType = {
     description: string,
     amount: number
 }
+
+export type TransactionType = {
+    id: number,
+    date: string,
+    amount: number,
+    status: string,
+}

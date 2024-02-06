@@ -1,12 +1,14 @@
 <template>
     <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-        <h3 class="mb-4 font-semibold text-gray-900 text-xl text-left">
-            {{ title }}
-        </h3>
+        <div class="mb-4">
+            <h3 class="font-semibold text-gray-900 text-xl text-left">
+                {{ title }}
+            </h3>
 
-        <p v-if="description" class="mx-1 text-left">
-            {{ description }}
-        </p>
+            <p v-if="description" class="mt-1 text-left text-sm text-gray-500">
+                {{ description }}
+            </p>
+        </div>
 
         <div>
             <slot/>
