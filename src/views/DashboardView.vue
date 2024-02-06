@@ -1,6 +1,8 @@
 <template>
     <DefaultLayout>
         <div class="p-4">
+            <Chart/>
+
             <div class="wrap flex pb-4 w-full">
                 <Customers/>
 
@@ -17,6 +19,7 @@ import DefaultLayout from "../layouts/DefaultLayout.vue";
 import Transactions from "../modules/Transactions.vue";
 import Products from "../modules/Products.vue";
 import Customers from "../modules/Customers.vue";
+import Chart from "../modules/Chart.vue";
 </script>
 
 <style lang="scss" scoped>
