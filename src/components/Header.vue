@@ -7,7 +7,7 @@
                     :key="link.id"
                     :to="link.url"
                     class="text-gray-600 hover:text-gray-800"
-                    :class="{ 'text-green-500': $route.name === link.name.toLowerCase() }"
+                    :class="{ 'text-blue-500': $route.name === link.name.toLowerCase() }"
                 >
                     {{ link.name }}
                 </RouterLink>
@@ -29,8 +29,10 @@
 <script lang="ts" setup>
 import {reactive} from "vue";
 import {useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
 const router = useRouter();
+const store = useStore();
 
 const links = reactive([
     {id: 1, name: 'Dashboard', url: '/'},
