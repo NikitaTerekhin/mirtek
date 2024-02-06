@@ -1,9 +1,16 @@
 <template>
     <div class="default">
         <Header/>
-        <Sidebar/>
-        <slot/>
-        <Footer/>
+
+        <div class="flex">
+            <Sidebar/>
+
+            <div>
+                <slot/>
+
+                <Footer/>
+            </div>
+        </div>
     </div>
 </template>
 

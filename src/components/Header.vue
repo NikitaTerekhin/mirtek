@@ -1,6 +1,6 @@
 <template>
-    <header class="bg-white shadow-lg">
-        <div class="container mx-auto flex items-center justify-between py-4 px-6 h-16">
+    <header class="bg-white border-b border-gray-300 fixed w-full px-4">
+        <div class="mx-auto flex items-center justify-between py-4 h-16">
             <div class="flex items-center space-x-4">
                 <img src="../assets/icons/logo.svg" alt="#">
 
