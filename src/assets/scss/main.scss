@@ -5,8 +5,7 @@
     line-height: 1.5;
     font-weight: 400;
 
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    background-color: #f7fafc;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -35,7 +34,9 @@ h1 {
 }
 
 #app {
-    max-width: 1600px;
-    margin: 0 auto;
+    //max-width: 1600px;
+    //margin: 0 auto;
     text-align: center;
+    height: 100%;
+    width: 100%;
 }
