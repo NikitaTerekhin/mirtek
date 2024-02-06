@@ -2,6 +2,8 @@
     <header class="bg-white shadow-lg">
         <div class="container mx-auto flex items-center justify-between py-4 px-6 h-16">
             <div class="flex items-center space-x-4">
+                <img src="../assets/icons/logo.svg" alt="#">
+
                 <template v-if="$route.name !== 'dashboard'">
                     <RouterLink
                         v-for="link in links"
@@ -16,7 +18,10 @@
 
                 <AppInput
                     v-if="store.getters.isAuth && $route.name === 'dashboard'"
+                    class="header__item"
                 />
+
+                <img src="../assets/icons/burger.svg" alt="#" class="header__item--mobile">
             </div>
 
             <div class="flex items-center space-x-2">
@@ -57,3 +62,25 @@ const login = () => {
     store.commit('setIsAuth', true);
 }
 </script>
+
+<style lang="scss" scoped>
+.header {
+    &__item {
+        &--mobile {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        &__item {
+            display: none;
+
+            &--mobile {
+                display: block;
+            }
+        }
+    }
+}
+</style>
