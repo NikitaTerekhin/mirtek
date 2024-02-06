@@ -18,7 +18,7 @@
             {{ item.amount }}
         </div>
 
-        <div class="w-1/4">
+        <div class="w-1/4 flex items-center justify-center">
             <AppBadge
                 :title="item.status"
                 :color="getColor(item.status)"
