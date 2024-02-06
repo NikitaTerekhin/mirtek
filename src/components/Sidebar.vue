@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white rounded-lg p-4 border-r border-gray-300 h-full">
+    <div class="bg-white p-4 border-r border-gray-300 h-full">
         <!-- Вкладки сайдбара -->
         <div v-for="(tab, index) in tabs" :key="index">
             <!-- Заголовок вкладки -->

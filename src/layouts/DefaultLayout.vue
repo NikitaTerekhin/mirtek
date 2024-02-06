@@ -1,11 +1,11 @@
 <template>
-    <div class="default">
+    <div class="h-screen flex flex-col">
         <Header/>
 
-        <div class="flex">
+        <div class="flex flex-1 mt-16">
             <Sidebar/>
 
-            <div>
+            <div class="flex-1">
                 <slot/>
 
                 <Footer/>
