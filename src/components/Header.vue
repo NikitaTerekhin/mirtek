@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-white border-b border-gray-300 fixed top-0 w-full z-10 px-4">
+    <header class="bg-white border-b border-gray-200 fixed top-0 w-full z-10 px-4 shadow-sm">
         <div class="mx-auto flex items-center justify-between py-4 h-16">
             <div class="flex items-center space-x-4">
                 <img src="../assets/icons/logo.svg" alt="#">

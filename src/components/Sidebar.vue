@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white p-4 border-r border-gray-300 h-full min-w-1/6">
+    <div class="bg-white p-4 border-r border-gray-200 h-full min-w-1/6">
         <div
             v-for="tab in tabs"
             :key="tab.id"

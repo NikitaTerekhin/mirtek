@@ -5,7 +5,8 @@
 </template>
 
 <script lang="ts" setup>
-import {defineProps, PropType} from "vue/dist/vue";
+import {defineProps} from "vue";
+import type {PropType} from "vue";
 
 const props = defineProps({
     title: {
