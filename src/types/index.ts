@@ -4,3 +4,10 @@ export type CustomerType = {
     email: string,
     amount: number
 }
+
+export type ProductType = {
+    id: number,
+    name: string,
+    description: string,
+    amount: number
+}
