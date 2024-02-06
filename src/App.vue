@@ -1,7 +1,5 @@
 <template>
-    <div>
-32
-    </div>
+    <RouterView/>
 </template>
 
 <script setup lang="ts">
