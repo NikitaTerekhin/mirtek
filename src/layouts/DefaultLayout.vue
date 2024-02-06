@@ -2,7 +2,7 @@
     <div class="h-screen flex flex-col">
         <Header/>
 
-        <div class=" flex flex-1 mt-16">
+        <div class="flex flex-1 mt-16">
             <Sidebar/>
 
             <div class="flex-1 content">
