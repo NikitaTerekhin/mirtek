@@ -10,8 +10,8 @@
                 :key="cell.id"
                 class="table-item w-1/4 py-1 px-4"
                 :class="{
-                    'text-left': cell.id === 't' | cell.id === 'd',
-                    'mobile': cell.id === 'a' | cell.id === 's',
+                    'text-left': cell.id === 't' || cell.id === 'd',
+                    'mobile': cell.id === 'a' || cell.id === 's',
                     'table-item--text-end': cell.id === 'd'
                 }"
             >

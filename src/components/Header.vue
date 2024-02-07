@@ -9,7 +9,7 @@
                         v-for="link in links"
                         :key="link.id"
                         :to="link.url"
-                        class="hover:text-gray-800 header__item"
+                        class="hover:text-gray-600 header__item"
                         :class="{ 'text-blue-500': $route.name === link.name.toLowerCase() }"
                     >
                         {{ link.name }}
@@ -74,8 +74,8 @@ const login = () => {
 
 const toggleTheme = () => {
     const body = document.querySelector('body');
-    body.classList.toggle('dark-theme');
-    body.classList.toggle('light-theme');
+    body?.classList.toggle('dark-theme');
+    body?.classList.toggle('light-theme');
 }
 </script>
 

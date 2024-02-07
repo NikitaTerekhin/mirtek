@@ -1,5 +1,8 @@
 type State = {
-    chart: unknown,
+    chart: {
+        data: unknown,
+        options: unknown,
+    },
 }
 
 export default {

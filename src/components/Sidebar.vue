@@ -61,7 +61,7 @@ const isActiveTab = (id: number) => {
     return activeTabId.value === id;
 };
 
-let openedTabs = ref([]);
+let openedTabs = ref(<number[]>[]);
 
 const toggleTab = (id: number) => {
     if (openedTabs.value.includes(id)) {
@@ -72,7 +72,7 @@ const toggleTab = (id: number) => {
 };
 
 const isOpenedTab = (id: number) => {
-    return openedTabs.value.includes(id);
+    return openedTabs.value?.includes(id);
 };
 </script>
 
