@@ -1,44 +1,46 @@
 <template>
-    <div>
-        <Bar id="my-chart-id"
-             :options="chartOptions"
-             :data="chartData"/>
-    </div>
+    <ContentWrapper
+        title="Sales"
+        class="mb-4"
+    >
+        <Line
+            id="chart"
+            :options="store.getters.chartOptions"
+            :data="store.getters.chartData"
+        />
+    </ContentWrapper>
 </template>
 
 <script lang="ts" setup>
-import {Bar} from "vue-chartjs";
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+} from 'chart.js'
+import { Line } from 'vue-chartjs'
+import ContentWrapper from "../components/ContentWrapper.vue";
+import {useStore} from "vuex";
 
-const chartData = {
-    labels: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
-    ],
-    datasets: [
-        {
-            label: 'Data One',
-            data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
-        }
-    ]
-}
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+)
 
-const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    legend: {
-        display: false
-    },
-}
+const store = useStore();
 </script>
+
+<style lang="scss" scoped>
+#chart {
+    max-height: 492px;
+}
+</style>
