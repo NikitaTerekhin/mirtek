@@ -11,7 +11,7 @@
                     :key="icon.id"
                     :src="`src/assets/icons/${icon.name}.svg`"
                     alt="#"
-                    class="footer__icon ml-4"
+                    class="footer__icon ml-4 cursor-pointer"
                 >
             </div>
         </div>

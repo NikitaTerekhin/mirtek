@@ -43,8 +43,8 @@
                 </template>
 
                 <template v-else>
-                    <img src="../assets/icons/bell.svg" alt="#" class="px-2">
-                    <img src="../assets/icons/avatar.svg" alt="">
+                    <IconBell class="px-2"/>
+                    <img src="../assets/icons/avatar.svg" alt="" class="cursor-pointer">
                 </template>
             </div>
         </div>
@@ -57,6 +57,7 @@ import { useStore } from 'vuex';
 import AppInput from "../UI/AppInput.vue";
 import IconLogo from "../UI/icons/IconLogo.vue";
 import IconLogin from "../UI/icons/IconLogin.vue";
+import IconBell from "../UI/icons/IconBell.vue";
 
 const store = useStore();
 

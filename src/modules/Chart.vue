@@ -1,6 +1,7 @@
 <template>
     <ContentWrapper
         title="Sales"
+        has-icon-info
         class="mb-4"
     >
         <Line

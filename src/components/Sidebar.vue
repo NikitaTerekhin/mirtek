@@ -22,6 +22,10 @@
                     :rotate="isOpenedTab(tab.id)"
                     class="ml-4"
                 />
+
+                <AppMark
+                    v-if="tab.notify"
+                    :info="tab.notify"/>
             </div>
 
             <div v-if="isOpenedTab(tab.id)" class="pl-8">
@@ -38,16 +42,17 @@
 <script lang="ts" setup>
 import {ref, reactive} from 'vue';
 import IconArrow from "../UI/icons/IconArrow.vue";
+import AppMark from "../UI/AppMark.vue";
 
 const tabs = reactive([
-    {id: 1, title: 'Overview', children: []},
-    {id: 2, title: 'Pages', children: [{title: 'Child 1'}]},
-    {id: 3, title: 'Sales', children: [{title: 'Product List'}, {title: 'Billing'}, {title: 'Invoice'}]},
-    {id: 4, title: 'Messages', children: []},
-    {id: 5, title: 'Authentication', children: [{title: 'Child 1'}]},
-    {id: 6, title: 'Docs', children: []},
-    {id: 7, title: 'Components', children: []},
-    {id: 8, title: 'Help', children: []}
+    {id: 1, notify: '', title: 'Overview', children: []},
+    {id: 2, notify: '', title: 'Pages', children: [{title: 'Child 1'}]},
+    {id: 3, notify: '', title: 'Sales', children: [{title: 'Product List'}, {title: 'Billing'}, {title: 'Invoice'}]},
+    {id: 4, notify: '1', title: 'Messages', children: []},
+    {id: 5, notify: '', title: 'Authentication', children: [{title: 'Child 1'}]},
+    {id: 6, notify: '', title: 'Docs', children: []},
+    {id: 7, notify: '', title: 'Components', children: []},
+    {id: 8, notify: '', title: 'Help', children: []}
 ]);
 
 let activeTabId = ref(1);
