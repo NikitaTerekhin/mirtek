@@ -53,6 +53,18 @@ export default {
                             display: false
                         }
                     },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: '#c2c2c2'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: '#c2c2c2'
+                            }
+                        }
+                    }
                 },
             },
         }
