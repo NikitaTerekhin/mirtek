@@ -2,7 +2,7 @@
     <header class="border-b border-gray-200 fixed top-0 w-full z-10 px-4 shadow-sm">
         <div class="mx-auto flex items-center justify-between py-4 h-16">
             <div class="flex items-center space-x-4">
-                <img src="../assets/icons/logo.svg" alt="#">
+                <IconLogo/>
 
                 <template v-if="$route.name !== 'dashboard'">
                     <RouterLink
@@ -37,7 +37,7 @@
                         class="hover:text-gray-600 flex items-center"
                         @click="login"
                     >
-                        <img src="../assets/icons/login.svg" alt="#" class="px-2">
+                        <IconLogin class="px-2"/>
                         <span>Login/Register</span>
                     </button>
                 </template>
@@ -55,6 +55,8 @@
 import { reactive } from "vue";
 import { useStore } from 'vuex';
 import AppInput from "../UI/AppInput.vue";
+import IconLogo from "../UI/icons/IconLogo.vue";
+import IconLogin from "../UI/icons/IconLogin.vue";
 
 const store = useStore();
 

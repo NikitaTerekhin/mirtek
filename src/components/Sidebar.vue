@@ -17,14 +17,11 @@
                     {{ tab.title }}
                 </div>
 
-                <template v-if="tab.children.length">
-                    <img
-                        src="../assets/icons/arrow.svg"
-                        alt="#"
-                        :class="{'rotate-180': isOpenedTab(tab.id)}"
-                        class="ml-4"
-                    >
-                </template>
+                <IconArrow
+                    v-if="tab.children.length"
+                    :rotate="isOpenedTab(tab.id)"
+                    class="ml-4"
+                />
             </div>
 
             <div v-if="isOpenedTab(tab.id)" class="pl-8">
@@ -40,6 +37,7 @@
 
 <script lang="ts" setup>
 import {ref, reactive} from 'vue';
+import IconArrow from "../UI/icons/IconArrow.vue";
 
 const tabs = reactive([
     {id: 1, title: 'Overview', children: []},

@@ -66,6 +66,14 @@ button {
     .transaction__item--colored {
         color: #151515;
     }
+
+    .icon svg path {
+        stroke: #6d727a;
+    }
+
+    .icon-fill svg path {
+        fill: #6d727a;
+    }
 }
 
 .light-theme {
