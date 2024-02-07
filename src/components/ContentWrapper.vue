@@ -1,7 +1,7 @@
 <template>
-    <div class="bg-white rounded-2xl p-4 border border-gray-200 shadow-sm">
+    <div class="rounded-2xl p-4 border border-gray-200 shadow-sm">
         <div class="mb-4">
-            <h3 class="font-semibold text-gray-900 text-xl text-left">
+            <h3 class="font-semibold text-xl text-left">
                 {{ title }}
             </h3>
 

@@ -23,7 +23,7 @@
             v-for="(transaction, index) in store.getters.transactions"
             :key="transaction.id"
             :item="transaction"
-            :class="{ 'bg-gray-100': index % 2 !== 0 }"
+            :class="{ 'transaction__item--colored bg-gray-100': index % 2 !== 0 }"
         />
     </ContentWrapper>
 </template>

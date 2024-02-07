@@ -5,7 +5,7 @@
         <input
             type="text"
             placeholder="Search"
-            class="flex-1 focus:outline-none w-200"
+            class="flex-1 focus:outline-none w-200 bg-transparent"
         />
     </div>
 </template>

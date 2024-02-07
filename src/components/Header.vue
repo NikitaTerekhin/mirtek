@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-white border-b border-gray-200 fixed top-0 w-full z-10 px-4 shadow-sm">
+    <header class="border-b border-gray-200 fixed top-0 w-full z-10 px-4 shadow-sm">
         <div class="mx-auto flex items-center justify-between py-4 h-16">
             <div class="flex items-center space-x-4">
                 <img src="../assets/icons/logo.svg" alt="#">
@@ -9,7 +9,7 @@
                         v-for="link in links"
                         :key="link.id"
                         :to="link.url"
-                        class="text-gray-600 hover:text-gray-800 header__item"
+                        class="hover:text-gray-800 header__item"
                         :class="{ 'text-blue-500': $route.name === link.name.toLowerCase() }"
                     >
                         {{ link.name }}
@@ -25,9 +25,16 @@
             </div>
 
             <div class="flex items-center space-x-2">
+                <button
+                    class="border border-gray-200 rounded-xl py-1 px-2"
+                    @click="toggleTheme"
+                >
+                    Toggle theme
+                </button>
+
                 <template v-if="!store.getters.isAuth">
                     <button
-                        class="text-gray-600 hover:text-gray-800 flex items-center"
+                        class="hover:text-gray-600 flex items-center"
                         @click="login"
                     >
                         <img src="../assets/icons/login.svg" alt="#" class="px-2">
@@ -60,6 +67,12 @@ const links = reactive([
 
 const login = () => {
     store.commit('setIsAuth', true);
+}
+
+const toggleTheme = () => {
+    const body = document.querySelector('body');
+    body.classList.toggle('dark-theme');
+    body.classList.toggle('light-theme');
 }
 </script>
 

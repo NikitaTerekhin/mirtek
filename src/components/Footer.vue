@@ -1,6 +1,6 @@
 <template>
     <footer class="p-4 pt-0">
-        <div class="footer__content flex bg-white rounded-2xl px-6 py-12 border border-gray-200  shadow-sm justify-between">
+        <div class="footer__content flex rounded-2xl px-6 py-12 border border-gray-200  shadow-sm justify-between">
             <div class="text-gray-500">
                 © 2021 Themesberg, LLC. All rights reserved.
             </div>

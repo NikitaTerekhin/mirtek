@@ -4,7 +4,14 @@
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    background-color: #f7fafc;
+    --background-color-light: #ffffff;
+    --text-color-light: #151515;
+    --background-color-dark: #151515;
+    --text-color-dark: #ffffff;
+    --background-color-light-body: #f7fafc;
+    --background-color-dark-body: #151515;
+    --text-color-btn-dark: #ffffff;
+    --text-color-btn-light: #6d727a;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -17,6 +24,55 @@ body {
     place-items: center;
     min-height: 100vh;
     box-sizing: border-box;
+    background-color: var(--background-color-body);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--text-color-btn);
+}
+
+aside {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+button {
+    color: var(--text-color-btn);
+}
+
+.dark-theme {
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --background-color-body: var(--background-color-dark-body);
+    --text-color-btn: var(--text-color-btn-dark);
+
+    footer img {
+        background: #ffffff;
+        border-radius: 50%;
+    }
+
+    .sidebar__item {
+        &:hover {
+            color: #151515;
+        }
+    }
+
+    .transaction__item--colored {
+        color: #151515;
+    }
+}
+
+.light-theme {
+    --background-color: var(--background-color-light);
+    --text-color: var(--text-color-light);
+    --background-color-body: var(--background-color-light-body);
+    --text-color-btn: var(--text-color-btn-light);
 }
 
 #app {

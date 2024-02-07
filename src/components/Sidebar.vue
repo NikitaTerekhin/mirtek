@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar fixed bg-white p-4 border-r border-gray-200 h-full min-w-1/6">
+    <aside class="sidebar fixed p-4 border-r border-gray-200 h-full min-w-1/6">
         <div
             v-for="tab in tabs"
             :key="tab.id"
@@ -7,7 +7,7 @@
             :class="{'border-t pt-4': tab.id === 6}"
         >
             <div
-                class="flex items-center justify-between py-1 px-2 rounded-lg cursor-pointer text-gray-800 font-semibold hover:bg-gray-100"
+                class="sidebar__item flex items-center justify-between py-1 px-2 rounded-lg cursor-pointer font-semibold hover:bg-gray-100"
                 :class="{ 'text-green-500': isActiveTab(tab.id) }"
                 @click="toggleTab(tab.id)"
             >
@@ -29,13 +29,13 @@
 
             <div v-if="isOpenedTab(tab.id)" class="pl-8">
                 <div v-for="(child, index) in tab.children" :key="index" class="p-2">
-                    <div class="flex items-center cursor-pointer text-gray-800 font-semibold">
+                    <div class="flex items-center cursor-pointer font-semibold">
                         <span>{{ child.title }}</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </aside>
 </template>
 
 <script lang="ts" setup>
